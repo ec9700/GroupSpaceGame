@@ -7,6 +7,7 @@ public class PlayerController extends Component {
     public void initial() {
         //Initial() runs once
         //Put any code that should only run once (or needs to be reset after pooling)
+        //If you need to set a default value of a variable, set it here (look up pooling or message me if you want to know why)
 
     }
 
