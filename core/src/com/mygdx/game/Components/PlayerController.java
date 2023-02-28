@@ -1,6 +1,8 @@
 package com.mygdx.game.Components;
 
+import com.badlogic.gdx.graphics.Cursor;
 import com.rectgdx.Component;
+import com.rectgdx.KeyBinder;
 
 public class PlayerController extends Component {
     @Override
@@ -16,6 +18,8 @@ public class PlayerController extends Component {
         //Update() runs every frame
         //Puts things that need to update here
         System.out.println(parent.getPositionVec2());
+       parent.lookAt(KeyBinder.getMousePosVec2());
+       parent.move(parent.getNewTrajectoryVec2(KeyBinder.getMousePosVec2()).scl(3));
         //You can access the player by using parent ^^^
 
     }
