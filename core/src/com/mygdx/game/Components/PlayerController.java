@@ -14,5 +14,8 @@ public class PlayerController extends Component {
     public void update() {
         //Update() runs every frame
         //Puts things that need to update here
+        System.out.println(parent.getPositionVec2());
+        //You can access the player by using parent ^^^
+
     }
 }

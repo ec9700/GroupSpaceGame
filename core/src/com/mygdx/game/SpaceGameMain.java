@@ -20,8 +20,8 @@ public class SpaceGameMain extends ApplicationAdapter {
 		The second parameter is the keycode.
 		To check if W is being held down, use KeyBinder.getKeyDown("up");
 		 */
-		KeyBinder.keyBinds.put("up", Input.Keys.W);
-		KeyBinder.keyBinds.put("down", Input.Keys.S);
+		KeyBinder.keyBinds.put("accelerate", Input.Keys.W);
+		KeyBinder.keyBinds.put("decelerate", Input.Keys.S);
 		KeyBinder.keyBinds.put("left", Input.Keys.A);
 		KeyBinder.keyBinds.put("right", Input.Keys.D);
 		KeyBinder.keyBinds.put("fire", Input.Buttons.LEFT);
