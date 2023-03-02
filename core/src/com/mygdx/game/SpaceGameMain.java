@@ -33,6 +33,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 		 */
 		TextureManager.add(new SerializableTexture(Gdx.files.internal("spaceShip.png")),"spaceShip");
 		TextureManager.add(new SerializableTexture(Gdx.files.internal("ph.png")),"placeHolder");
+		TextureManager.add(new SerializableTexture(Gdx.files.internal("asteroid.png")),"asteroid");
 
 		/*
 		How large an object will be (default is set to 100)
