@@ -8,7 +8,10 @@ import com.rectgdx.TimeManager;
 public class PlayerController extends Component {
 
     private float speed = 0;
+    private float left = 10;
+    private float right = 10;
     private final float ACCELERATE = 10;
+
 
     @Override
     public void initial() {
