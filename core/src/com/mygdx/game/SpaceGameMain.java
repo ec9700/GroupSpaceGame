@@ -7,10 +7,13 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.mygdx.game.Components.PlayerController;
 import com.rectgdx.*;
 
+import java.util.ArrayList;
+
 public class SpaceGameMain extends ApplicationAdapter {
 	public RectSprite player;
 	public RectSprite asteroid;
 	public OrthographicCamera camera;
+	ArrayList<RectSprite> asteroids= new ArrayList<>();
 
 	@Override
 	public void create () {
@@ -48,7 +51,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 		camera.zoom = 1f;
 		camera.setToOrtho(false, 800, 480);
 
-		//player
+
 		player = SpriteManager.requestRectSprite(); //Creates sprite for player
 		player.create(TextureManager.getTexture("spaceShip"), 100, -1, 10, RectSprite.noArgs); //Basically a constructor
 		PlayerController playerController = (PlayerController) SpriteManager.requestComponent(PlayerController.class); //Creates component player controller
@@ -65,6 +68,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 		asteroid = SpriteManager.requestRectSprite();
 		asteroid.create(TextureManager.getTexture("asteroid"), 100, 250, 320, RectSprite.noArgs); //Basically a constructor
 		asteroid.initial();
+		asteroids.add(asteroid);
 	}
 	@Override
 	public void render () { SetupManager.update(); }
