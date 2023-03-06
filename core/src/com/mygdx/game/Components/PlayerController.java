@@ -3,10 +3,7 @@ package com.mygdx.game.Components;
 import com.badlogic.gdx.graphics.Cursor;
 import com.rectgdx.Component;
 import com.rectgdx.KeyBinder;
-import com.rectgdx.RectSprite;
 import com.rectgdx.TimeManager;
-
-import java.util.ArrayList;
 
 public class PlayerController extends Component {
 
@@ -38,12 +35,10 @@ public class PlayerController extends Component {
         parent.move(parent.getNewTrajectoryVec2(KeyBinder.getMousePosVec2()).scl(speed));
 
 
-        ArrayList<RectSprite> temp = parent.getMultipleAdjacentCollidersAt(parent.getPositionVec2().x, parent.getPositionVec2().y );
-        if(temp.size()>0){
+       if(parent.testAdjacentCollisionAt(0,0)){
             System.out.println("collide");
-       //having trouble ^^
+            //having trouble ^^
         }
-        //You can access the player by using parent ^^
+    }
     }
 
-}
