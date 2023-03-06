@@ -66,7 +66,8 @@ public class SpaceGameMain extends ApplicationAdapter {
 
 // asteroid
 		asteroid = SpriteManager.requestRectSprite();
-		asteroid.create(TextureManager.getTexture("asteroid"), 100, 250, 320, RectSprite.noArgs); //Basically a constructor
+		asteroid.create(TextureManager.getTexture("asteroid"), 100, 250, 320, RectSprite.noArgs);
+		SpriteManager.addSpriteToMap("asteroid", asteroid);//Basically a constructor
 		asteroid.initial();
 		asteroids.add(asteroid);
 	}

@@ -37,7 +37,8 @@ public class PlayerController extends Component {
 
        if(parent.testAdjacentCollisionAt(0,0)){
             System.out.println("collide");
-            //having trouble ^^
+        speed = 0.8F;
+
         }
     }
     }
