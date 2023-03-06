@@ -1,9 +1,7 @@
 package com.mygdx.game.Components;
 
 import com.badlogic.gdx.graphics.Cursor;
-import com.rectgdx.Component;
-import com.rectgdx.KeyBinder;
-import com.rectgdx.TimeManager;
+import com.rectgdx.*;
 
 public class PlayerController extends Component {
 
@@ -38,7 +36,6 @@ public class PlayerController extends Component {
        if(parent.testAdjacentCollisionAt(0,0)){
             System.out.println("collide");
         speed = 0.8F;
-
         }
     }
     }
