@@ -1,6 +1,7 @@
 package com.mygdx.game.Components;
 
 import com.rectgdx.Component;
+import com.rectgdx.KeyBinder;
 
 public class PlayerController extends Component {
     @Override
@@ -15,6 +16,25 @@ public class PlayerController extends Component {
     public void update() {
         //Update() runs every frame
         //Puts things that need to update here
+        if (KeyBinder.getKeyDown("accelerate")) {
+            //logic for acceleration
+        }
+        if (KeyBinder.getKeyDown("decelerate")) {
+            //logic for deceleration
+        }
+        if (KeyBinder.getKeyDown("left")) {
+            //logic for side movement
+        }
+        if (KeyBinder.getKeyDown("right")) {
+            //logic for side movement
+        }
+        if (KeyBinder.getKeyDown("fire")) {
+            //logic for primary weapon
+        }
+        if (KeyBinder.getKeyDown("fire2")) {
+            //logic for secondary weapon
+        }
+
         System.out.println(parent.getPositionVec2());
         //You can access the player by using parent ^^^
 
