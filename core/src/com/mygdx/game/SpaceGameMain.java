@@ -45,10 +45,9 @@ public class SpaceGameMain extends ApplicationAdapter {
 		camera = new OrthographicCamera();
 		camera.zoom = 1f;
 		camera.setToOrtho(false, 800, 480);
-
 		//player
 		player = SpriteManager.requestRectSprite(); //Creates sprite for player
-		player.create(TextureManager.getTexture("spaceShip"), 100, -1,10,RectSprite.noArgs); //Basically a constructor
+		player.create(TextureManager.getTexture("spaceShip"), 100, -1,10); //Basically a constructor
 		PlayerController playerController = (PlayerController) SpriteManager.requestComponent(PlayerController.class); //Creates component player controller
 		player.addComponent(playerController); //Adds component to play
 		SpriteManager.addSpriteToMap("player",player); //Adds player to map for easy access (not required for creating a sprite)

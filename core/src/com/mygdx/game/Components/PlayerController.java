@@ -18,5 +18,7 @@ public class PlayerController extends Component {
         System.out.println(parent.getPositionVec2());
         //You can access the player by using parent ^^^
 
+        //IF YOU HAVE USED Rectsprite.noArgs(), REMOVE IT FROM YOU CODE!
+
     }
 }
