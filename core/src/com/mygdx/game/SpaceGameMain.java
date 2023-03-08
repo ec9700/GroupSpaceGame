@@ -64,7 +64,11 @@ public class SpaceGameMain extends ApplicationAdapter {
 
 
 	@Override
-	public void render () { SetupManager.update(); }
+	public void render () {
+			player.getPositionVec2();	//get players current position
+		SetupManager.update();
+				// get players later position
+	}
 	@Override
 	public void dispose () {
 		SetupManager.dispose();
