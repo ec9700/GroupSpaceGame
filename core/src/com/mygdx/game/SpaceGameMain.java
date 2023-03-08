@@ -7,13 +7,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.mygdx.game.Components.PlayerController;
 import com.rectgdx.*;
 
-import java.util.ArrayList;
-
 public class SpaceGameMain extends ApplicationAdapter {
 	public RectSprite player;
-	public RectSprite asteroid;
 	public OrthographicCamera camera;
-	ArrayList<RectSprite> asteroids= new ArrayList<>();
 
 	@Override
 	public void create () {
@@ -35,9 +31,8 @@ public class SpaceGameMain extends ApplicationAdapter {
 		Adds textures (found under assets.)
 		Asteroid.png needs to be added (use same format.)
 		 */
-		TextureManager.add(new SerializableTexture(Gdx.files.internal("spaceShip.png")), "spaceShip");
-		TextureManager.add(new SerializableTexture(Gdx.files.internal("ph.png")), "placeHolder");
-		TextureManager.add(new SerializableTexture(Gdx.files.internal("asteroid.png")), "asteroid");
+		TextureManager.add(new SerializableTexture(Gdx.files.internal("spaceShip.png")),"spaceShip");
+		TextureManager.add(new SerializableTexture(Gdx.files.internal("ph.png")),"placeHolder");
 
 		/*
 		How large an object will be (default is set to 100)
@@ -50,28 +45,24 @@ public class SpaceGameMain extends ApplicationAdapter {
 		camera = new OrthographicCamera();
 		camera.zoom = 1f;
 		camera.setToOrtho(false, 800, 480);
-
-
+		//player
 		player = SpriteManager.requestRectSprite(); //Creates sprite for player
-		player.create(TextureManager.getTexture("spaceShip"), 100, -1, 10, RectSprite.noArgs); //Basically a constructor
+		player.create(TextureManager.getTexture("spaceShip"), 100, -1,10); //Basically a constructor
 		PlayerController playerController = (PlayerController) SpriteManager.requestComponent(PlayerController.class); //Creates component player controller
 		player.addComponent(playerController); //Adds component to play
-		SpriteManager.addSpriteToMap("player", player); //Adds player to map for easy access (not required for creating a sprite)
+		SpriteManager.addSpriteToMap("player",player); //Adds player to map for easy access (not required for creating a sprite)
 		player.initial(); //Initializes all components and sprite
 
 		SetupManager.setup(camera);
-		RenderManager.setBackgroundColor(0, 0, 1, 1);
+		RenderManager.setBackgroundColor(0,0,1,1);
 		RenderManager.setGlobalLighting(1f);
 		RenderManager.debugTexture = TextureManager.getTexture("placeHolder");
-
-// asteroid
-		asteroid = SpriteManager.requestRectSprite();
-		asteroid.create(TextureManager.getTexture("asteroid"), 35, 250, 320, RectSprite.noArgs);
-		SpriteManager.addSpriteToMap("asteroid", asteroid);//Basically a constructor
-		asteroid.initial();
 	}
+
 	@Override
-	public void render () { SetupManager.update(); }
+	public void render () {
+		SetupManager.update();
+	}
 
 	@Override
 	public void dispose () {

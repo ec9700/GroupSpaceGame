@@ -1,16 +1,8 @@
 package com.mygdx.game.Components;
 
-import com.badlogic.gdx.graphics.Cursor;
-import com.rectgdx.*;
+import com.rectgdx.Component;
 
 public class PlayerController extends Component {
-
-    private float speed = 0;
-    private float left = 10;
-    private float right = 10;
-    private final float ACCELERATE = 10;
-
-
     @Override
     public void initial() {
         //Initial() runs once
@@ -23,20 +15,10 @@ public class PlayerController extends Component {
     public void update() {
         //Update() runs every frame
         //Puts things that need to update here
-        if (KeyBinder.getKeyDown("accelerate")) {
-            speed= speed+ ACCELERATE * TimeManager.getDeltaTime();
-        }
-        else if (KeyBinder.getKeyDown("decelerate")) {
-            speed= speed- ACCELERATE * TimeManager.getDeltaTime();
-        }
-        parent.lookAt(KeyBinder.getMousePosVec2());
-        parent.move(parent.getNewTrajectoryVec2(KeyBinder.getMousePosVec2()).scl(speed));
+        System.out.println(parent.getPositionVec2());
+        //You can access the player by using parent ^^^
 
+        //IF YOU HAVE USED Rectsprite.noArgs(), REMOVE IT FROM YOU CODE!
 
-       if(parent.testAdjacentCollisionAt(0,0)){
-            System.out.println("collide");
-        speed = 0.8F;
-        }
     }
-    }
-
+}
