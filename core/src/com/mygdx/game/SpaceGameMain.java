@@ -10,7 +10,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 	public RectSprite player;
 	public RectSprite asteroid;
 	public OrthographicCamera camera;
-	ArrayList<RectSprite> asteroids= new ArrayList<>();
+
 	@Override
 	public void create () {
 		/*
@@ -59,7 +59,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 		asteroid.create(TextureManager.getTexture("asteroid"), 35, 250, 320);
 		SpriteManager.addSpriteToMap("asteroid", asteroid);//Basically a constructor
 		asteroid.initial();
-		asteroids.add(asteroid);
+
 	}
 
 

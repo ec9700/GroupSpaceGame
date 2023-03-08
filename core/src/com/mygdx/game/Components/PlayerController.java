@@ -26,7 +26,8 @@ public class PlayerController extends Component {
         }
         parent.lookAt(KeyBinder.getMousePosVec2());
         parent.move(parent.getNewTrajectoryVec2(KeyBinder.getMousePosVec2()).scl(speed));
-        if(parent.testAdjacentCollisionAt(0,0)){
+        if(parent.testAdjacentCollisionAt(0,0,parent.getHitBoxWidth(),parent.getHitBoxHeight())){
+            parent.getAdjacentColliderAt(0,0,parent.getHitBoxWidth(),parent.getHitBoxHeight()).delete();
             System.out.println("collide");
             speed = 0.8F;
 
