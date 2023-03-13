@@ -3,6 +3,8 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.mygdx.game.Components.PlayerController;
 import com.rectgdx.*;
 import java.util.ArrayList;
@@ -52,7 +54,7 @@ public class SpaceGameMain extends ApplicationAdapter {
 		RenderManager.setBackgroundColor(0, 0, 1, 1);
 		RenderManager.setGlobalLighting(1f);
 		RenderManager.debugTexture = TextureManager.getTexture("placeHolder");
-
+		//RenderManager.drawHitBoxes()
 // asteroid
 		asteroid = SpriteManager.requestRectSprite();
 		asteroid.create(TextureManager.getTexture("asteroid"), 100, 250, 320);
@@ -65,9 +67,11 @@ public class SpaceGameMain extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-			player.getPositionVec2();	//get players current position
+				//get players current position
 		SetupManager.update();
 				// get players later position
+		camera.position.set(player.getPositionVec3());
+
 	}
 	@Override
 	public void dispose () {
